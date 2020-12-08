@@ -1,0 +1,30 @@
+{
+    "users": [
+        {
+            "id":1,
+            "name": "Jan",
+            "email": "jan@test.pl",
+            "role": "ROLE_ADMIN"
+        },
+        {
+            "id":2,
+            "name": "Ala",
+            "email": "ala@test.pl",
+            "role": "ROLE_USER"
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "REACT"
+        },
+        {
+            "id": 2,
+            "name": "REACT-REDUX"
+        },
+        {
+            "id": 3,
+            "name": "REDUX"
+        }
+    ]
+}
