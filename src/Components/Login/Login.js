@@ -2,16 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './Login.css';
 
 
-const Login = () => {
+const Login = ({ user, loginUser }) => {
 
   useEffect(() => {document.title = "Strona logowania"}, [])
 
-  const [userDto, setUserDto] = useState({});
+  const [userDto, setUserDto] = useState({
+    name: '',
+    email: '',
+    role: ''
+  });
 
   const hadnleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(userDto)
+    loginUser(userDto.email);
+
+ 
   }
+
+
 
   const handleOnChange = (e) => {
     const name = e.target.name;
@@ -33,10 +41,10 @@ const Login = () => {
                 </div>
                 <div className='login-label'>Password:</div>
                 <div className='login-input-div'>
-                  <input className='login-input' onChange={handleOnChange} type="password" name="password" />
+                  <input disabled className='login-input' onChange={handleOnChange} type="password" name="password" />
                 </div>
               </div>
-              <button className="login-button" type="submit" >Zaloguj</button>
+              {user.email === '' ? <button className="login-button" type="submit" >Zaloguj</button> : <div>Zalogowany</div>}
             </form>
         </div>
     )
